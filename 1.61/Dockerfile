@@ -17,3 +17,9 @@ RUN curl -O https://static.rust-lang.org/rustup/dist/x86_64-unknown-linux-gnu/ru
 	cargo --version
 
 RUN rustup component add rustfmt
+
+RUN rustup target add aarch64-unknown-linux-gnu
+
+RUN curl -LO https://github.com/esp-rs/rust-build/releases/download/v${RUST_VERSION}.0/install-rust-toolchain.sh && \
+	chmod a+x install-rust-toolchain.sh && \
+	./install-rust-toolchain.sh --toolchain-version ${RUST_VERSION}.0

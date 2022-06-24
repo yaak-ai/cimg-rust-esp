@@ -2,5 +2,5 @@
 
 repository=cimg-rust-esp
 parent=base
-variants=(esp aarch64)
+variants=()
 namespace=yaaktech
