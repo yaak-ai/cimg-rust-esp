@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-repository=rust
+repository=cimg-rust-esp
 parent=base
-variants=(node browsers)
-namespace=cimg
+variants=(esp)
+namespace=yaaktech
