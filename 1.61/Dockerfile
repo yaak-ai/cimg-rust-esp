@@ -23,3 +23,7 @@ RUN rustup target add aarch64-unknown-linux-gnu
 RUN curl -LO https://github.com/esp-rs/rust-build/releases/download/v${RUST_VERSION}.0/install-rust-toolchain.sh && \
 	chmod a+x install-rust-toolchain.sh && \
 	./install-rust-toolchain.sh --toolchain-version ${RUST_VERSION}.0
+
+RUN sudo apt-get update && sudo apt-get -y install libuv1-dev libudev-dev python3-pip
+
+RUN cargo +esp install espflash

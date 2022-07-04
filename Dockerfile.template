@@ -24,4 +24,6 @@ RUN curl -LO https://github.com/esp-rs/rust-build/releases/download/v${RUST_VERS
 	chmod a+x install-rust-toolchain.sh && \
 	./install-rust-toolchain.sh --toolchain-version ${RUST_VERSION}.0
 
+RUN sudo apt-get update && sudo apt-get -y install libuv1-dev libudev-dev python3-pip
+
 RUN cargo +esp install espflash
