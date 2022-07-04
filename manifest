@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 repository=cimg-rust-esp
-parent=base
+parent=rust
 variants=()
 namespace=yaaktech
