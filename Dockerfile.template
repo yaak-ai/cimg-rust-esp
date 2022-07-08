@@ -9,11 +9,12 @@ LABEL maintainer="Maxime Borges <maxiem@yaak.ai>"
 ENV RUST_VERSION=%%VERSION_FULL%% \
 	PATH=/home/circleci/.cargo/bin:$PATH
 
-RUN rustup target add aarch64-unknown-linux-gnu
-
 RUN curl -LO https://github.com/esp-rs/rust-build/releases/download/v${RUST_VERSION}.0/install-rust-toolchain.sh && \
 	chmod a+x install-rust-toolchain.sh && \
 	./install-rust-toolchain.sh --toolchain-version ${RUST_VERSION}.0
+
+RUN rustup target add aarch64-unknown-linux-gnu
+RUN rustup target add aarch64-unknown-linux-musl
 
 RUN curl -L https://github.com/ryankurte/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz | tar xz -C ~/.cargo/bin
 RUN cargo binstall --no-confirm espflash
