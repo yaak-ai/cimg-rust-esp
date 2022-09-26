@@ -3,4 +3,5 @@
 repository=cimg-rust-esp
 parent=rust
 variants=()
+parentTags=(cargo-deb)
 namespace=yaaktech

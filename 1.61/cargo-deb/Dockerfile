@@ -2,11 +2,11 @@
 
 # Do not edit individual Dockerfiles manually. Instead, please make changes to the Dockerfile.template, which will be used by the build script to generate Dockerfiles.
 
-FROM cimg/%%PARENT%%:%%VERSION_FULL%%
+FROM cimg/rust:1.61.0
 
 LABEL maintainer="Maxime Borges <maxime@yaak.ai>"
 
-ENV RUST_VERSION=%%VERSION_FULL%% \
+ENV RUST_VERSION=1.61.0 \
 	PATH=/home/circleci/.cargo/bin:$PATH
 
 # install-rust-toolchain.sh forcefully installs stable and nightly toolchains, so uninstall them afterwards as rust should come from the image itself
