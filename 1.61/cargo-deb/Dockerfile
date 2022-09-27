@@ -18,7 +18,6 @@ RUN curl -LO https://github.com/esp-rs/rust-build/releases/download/v${RUST_VERS
 	rustup toolchain uninstall nightly && \
 	rm install-rust-toolchain.sh
 
-RUN rustup target add aarch64-unknown-linux-gnu
 RUN rustup target add aarch64-unknown-linux-musl
 
 COPY sources-ports.list /etc/apt/sources.list.d/ports.list
